@@ -40,6 +40,14 @@ class UserData(object):
         # number of follows
         self.follows = account.follows_count
 
+        self.user_desc = {
+            'pic_url': account.profile_pic_url,
+            'username': account.username,
+            'follows': account.follows_count,
+            'followers': account.followers_count,
+            'name': account.full_name,
+        }
+
     # @return true if avatar image is default
     def __compare_img(self, image_url):
         diff = ImageChops.difference(self.__default_img, image_url)
